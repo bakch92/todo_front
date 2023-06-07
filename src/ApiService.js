@@ -16,6 +16,9 @@ export function call(api, method, data) {
         
     }).then((response) => response.data)
     .catch((error) => {
+        if(error.response.status === 400) {
+            alert(error.response.data.header.message);
+        }
         if(error.response.status === 403) {
             window.location.href = "/login"
         }
