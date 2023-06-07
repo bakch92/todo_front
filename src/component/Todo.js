@@ -34,7 +34,7 @@ const Todo = (props) => {
         const thisItem = {...item};
         thisItem.done = !thisItem.done;
         modItem(thisItem);
-        props.update(item);
+        props.update(thisItem);
     }
 
     return (
