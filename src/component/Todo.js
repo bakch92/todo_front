@@ -20,6 +20,10 @@ const Todo = (props) => {
     const enterKeyEventHandler = (e) => {
         if(e.key === 'Enter') {
             modOnlyState(true);
+            console.log('item', item);
+            if(item.title == '') {
+                alert('일정 제목을 해주시기 바랍니다.');
+            }
             props.update(item);
         }
     }

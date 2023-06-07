@@ -18,10 +18,11 @@ const AddTodo = (props) => {
     }, [itemState]);
 
     const onButtonClick = () => {
+        if(item.title == '') {
+            alert("일정 제목을 입력해주시기 바랍니다.");
+            return;
+        }
         props.add(item);
-        // const thisItem = {...item};
-        // // thisItem.title = "";
-        // // modItem(thisItem);
         modState(true);
     }
 

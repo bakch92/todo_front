@@ -42,6 +42,7 @@ function App() {
   const update = (item) => {
     call("/todo/" + item.id, "PATCH", item).then(response => {
       modItems(response.todoData);
+      console.log(items);
       modCount(stateCount + 1);
     })
   }
